@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReservationsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'reservations';
+    public $tableName = 'categories';
 
     /**
      * Run the migrations.
-     * @table reservations
+     * @table categories
      *
      * @return void
      */
@@ -22,12 +22,8 @@ class CreateReservationsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('reservation_id');
+            $table->increments('category_id');
             $table->string('name', 45)->nullable();
-            $table->string('phone', 45)->nullable();
-            $table->string('message', 45)->nullable();
-            $table->dateTime('date_time')->nullable();
-            $table->timestamps();
         });
     }
 

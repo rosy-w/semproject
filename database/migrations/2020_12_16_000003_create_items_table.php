@@ -23,19 +23,18 @@ class CreateItemsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('item_id');
-            $table->string('category_id', 45)->nullable();
+            $table->integer('category_id');
             $table->string('description', 45)->nullable();
             $table->integer('price');
             $table->string('image_url')->nullable();
+
             $table->index(["category_id"], 'FK_ItemCategory_idx');
+
 
             $table->foreign('category_id', 'FK_ItemCategory_idx')
                 ->references('category_id')->on('categories')
                 ->onDelete('no action')
                 ->onUpdate('no action');
-
-            $table->timestamps();
-
         });
     }
 
