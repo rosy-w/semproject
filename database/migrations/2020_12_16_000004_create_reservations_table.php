@@ -28,14 +28,6 @@ class CreateReservationsTable extends Migration
             $table->string('message', 45)->nullable();
             $table->dateTime('date_time')->nullable();
             $table->integer('user_id');
-
-            $table->index(["user_id"], 'FK_ReservationUser_idx');
-
-
-            $table->foreign('user_id', 'FK_ReservationUser_idx')
-                ->references('user_id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
         });
     }
 
