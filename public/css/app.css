@@ -43,7 +43,13 @@
 *::after {
   box-sizing: border-box;
 }
-
+/*Added CSS*/
+.jumbotron {
+  background: url(path/to/image.jpg) fixed center no-repeat;
+  background-size: cover;
+ }
+ /*End of Added CSS*/
+ 
 html {
   font-family: sans-serif;
   line-height: 1.15;
