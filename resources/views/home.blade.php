@@ -10,15 +10,26 @@
 </li>
 @endsection
 @section('content')
+
 <div class="container">
-    <div class="row">
+    <div class="row ">
         <div class="col-9">
-            This is the first column
+            <div class="card">
+                <div>
+                    Welcome to Our Restaurant
+                </div>
+                <a href="{{ route('menu') }}">Order Now</a>
+            </div>
         </div>
         <div class="col">
             This is the second column
         </div>
     </div>
 
+</div>
+<div class="container">
+    <div class="row">
+
+    </div>
 </div>
 @endsection
