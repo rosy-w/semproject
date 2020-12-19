@@ -24,7 +24,8 @@ class CreateItemsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('item_id');
             $table->integer('category_id');
-            $table->string('description', 45)->nullable();
+            $table->string('name', 45);
+            $table->string('description', 100)->nullable();
             $table->integer('price');
             $table->string('image_url')->nullable();
         });

@@ -11,21 +11,24 @@
 </li>
 @endsection
 @section('content')
-<div class="bg-white border shadow-sm">
+<div class="bg-white border shadow-sm w-75 m-auto p-3">
     <div>
         <ul class="nav flex-row border list-group list-group-flush w-100 d-flex justify-content-center text-center pt-4">
             @foreach ($categories as $category)
-            <li class="list-group-item bg-light"><a href="{{ route('category',['category'=> $category->name])}}">{{$category->name}}</a></li>       
+            <li class="list-group-item px-5"><h3><a href="{{ route('category',['category'=> $category->name])}}">{{$category->name}}</a></h3></li>       
             @endforeach
         </ul>
     </div>
-    <div class="row">     
+    <div class="row p-3">     
         @foreach ($items as $item)
             <div class="col-md-6">
-                <h1>{{$item->name}}</h1>
+                <div class="float-left p-2">
+                    <img src="http://placehold.it/150x150" alt="">
+                </div>
+                <h3 class="p-2">{{$item->name}}</h3>
                 <p>{{$item->description}}</p>
-                <p>{{$item->price}}</p>
-                <button>Add to Cart</button>
+                <p>Ksh. {{$item->price}}</p>
+                <button class="float-right" >Add to Cart</button>
             </div>
         @endforeach 
     </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cart;
+use App\User;
 
 class CartController extends Controller
 {
@@ -11,9 +13,11 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('cart');
+        $id = $request->user()->id;
+        $cartitems=Cart::where('user_id','=',$id);
+        return view('cart',compact('cartitems'));
     }
 
     /**

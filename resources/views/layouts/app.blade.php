@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield('extra-css')
 </head>
 <body>
@@ -56,6 +57,8 @@
                             @endif
                         @else
                             @yield('extra-nav')
+                            {{$id = Auth::user()->user_id}}
+                            <li class="nav-item"><a class="nav-link" href="{{route('cart_index',['id'=>$id])}}">Cart</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

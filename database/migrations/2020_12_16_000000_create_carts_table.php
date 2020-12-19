@@ -23,7 +23,17 @@ class CreateCartsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('cart_id');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id');
+            $table->integer('food_id');
+            $table->string('food_name',45);
+            $table->string('food_desc',100);
+            $table->integer('quantity');
+            $table->integer('unit_price');
+            $table->integer('total_price');
+            $table->timestamps();
+
+            $table->primary(['cart_id', 'food_id']);
+        
         });
     }
 

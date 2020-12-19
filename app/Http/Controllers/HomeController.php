@@ -37,7 +37,7 @@ class HomeController extends Controller
     }
     public function menu(Category $category)
     {
-        $items=Item::where('category_id','=',$category->category_id)->get();
+        $items=Item::where('category_id','=','1')->get();
         $categories=Category::all();
         return view('menu',compact('categories','items'));
     }
