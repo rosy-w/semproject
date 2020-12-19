@@ -24,16 +24,20 @@ class CreateCartsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('cart_id');
             $table->integer('user_id');
-            $table->integer('food_id');
-            $table->string('food_name',45);
-            $table->string('food_desc',100);
-            $table->integer('quantity');
-            $table->integer('unit_price');
-            $table->integer('total_price');
+            $table->integer('total_amount');
             $table->timestamps();
 
             $table->primary(['cart_id', 'food_id']);
         
+        });
+        Schema::create('cart_item', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->integer('cart_id');
+            $table->integer('item_id');
+            $table->integer('quantity')->nullable();
+            $table->integer('total_price')->nullable();
+            $table->timestamps();
+            $table->primary(['cart_id','item_id']);
         });
     }
 
@@ -45,5 +49,6 @@ class CreateCartsTable extends Migration
      public function down()
      {
        Schema::dropIfExists($this->tableName);
+       Schema::dropIfExists('cart_item');
      }
 }

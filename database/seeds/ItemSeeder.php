@@ -14,7 +14,7 @@ class ItemSeeder extends Seeder
         $items=[
             [
                 'category_id'=>'1',
-                'description'=>'Pasta in delicious fresh-made tomato sauce.',
+                'description'=>'Pasta in delicious fresh-made tomato sauce.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. Duis turpis elit, suscipit vel elit ultrices, luctus varius elit. Praesent luctus metus sed sem posuere, in viverra diam scelerisque',
                 'name'=>'Tomato Pasta ',
                 'price'=>'200',
                 'image_url'=>'tomatopasta.png',
