@@ -12,12 +12,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-9 border">
+        <div class="col-9">
             This is the first column
         </div>
-        <div class="col border">
+        <div class="col">
             This is the second column
         </div>
     </div>
+
 </div>
 @endsection
