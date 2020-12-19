@@ -24,16 +24,28 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function welcome()
+    {
+        $categories=Category::all();
+        return view('welcome',compact('categories'));
+    }
     public function index()
     {
         $items=Item::all();
-        $catagories=Category::all();
-        return view('menu',compact('categories','items'));
+        $categories=Category::all();
+        return view('home',compact('categories','items'));
     }
-    public function menu()
+    public function menu(Category $category)
     {
-        $items=Item::all();
-        $catagories=Category::all();
+        $items=Item::where('category_id','=',$category->category_id)->get();
+        $categories=Category::all();
         return view('menu',compact('categories','items'));
     }
+    public function category(Category $category)
+    {
+        $items=Item::where('category_id','=',$category->category_id)->get();
+        $categories=Category::all();
+        return view('menu',compact('categories','items'));
+    }
+    
 }

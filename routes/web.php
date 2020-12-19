@@ -13,12 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'HomeController@welcome');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu', 'HomeController@menu')->name('menu');
+
+Route::get('/menu/category/{category}', 'HomeController@category')->name('category');
+
+Route::get('/cart', 'CartController@index')->name('cart_index');

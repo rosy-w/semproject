@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('extra-scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet" />
+    @yield('extra-css')
 </head>
 <body>
     <div id="app">
@@ -75,9 +77,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
+        </nav>    
+        <main class="py-1">
             @yield('content')
         </main>
     </div>
