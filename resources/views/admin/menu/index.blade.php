@@ -4,23 +4,22 @@
 
 @section('content')
   <div class="flex flex-col">
-    <a
-      href="{{route('add')}}"
-      class="self-end bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-    >
-      + New Food Item
-    </a>
     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
       <div class="mt-4 align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 p-4">
         <span class="text-gray-700">Categories of Food Items</span>
-        <label class="block w-3/12">
-          <select class="form-select block w-full mt-1" x-model="model">
-            <option value="initial" disabled selected>Select a category</option>
-            @foreach ($categories as $category)
-              <option value="{{$category}}">{{$category->name}}</option>
-            @endforeach
-          </select>
-        </label>
+        <div>
+          <label class="block w-3/12">
+            <select class="form-select block w-full mt-1" x-model="model">
+              <option value="initial" disabled selected>Select a category</option>
+              @foreach ($categories as $category)
+                <option value="{{$category}}">{{$category->name}}</option>
+              @endforeach
+            </select>
+          </label>
+          <a href="{{route('add')}}" class=" float-right font-semibold hover:text-red py-2 px-4 my-2 border rounded">
+            + New Food Item
+        </a>
+        </div>
         <div class="flex mt-4 align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg ">
           <table class="min-w-full">
             <thead>

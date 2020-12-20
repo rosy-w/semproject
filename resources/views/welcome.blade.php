@@ -12,7 +12,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" width="1200" height="500" src="storage/welcomeimg.png" alt="First slide">
+            <img class="d-block w-100 " width="1200" height="500" src="storage/welcomeimgclear.png" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h3><a href="{{ route('menu') }}">Order Now</a></h3>
                 <p>This is a description for the first slide.</p>
@@ -54,7 +54,7 @@
 </div>
 <div class="mt-5 py-2">
     <div>
-        <h3 class="text-center text-white p-3"style="background-color: #bc1823">What We Offer</h3>
+        <h3 class="text-center p-3">What We Offer</h3>
     </div>
     <div class="mt-4 row py-2 bg-white w-100">
         @foreach ($categories as $category)
