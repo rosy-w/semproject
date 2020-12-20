@@ -6,21 +6,13 @@
     <a class="nav-link" href="/admin">Admin</a>   
 </li>
 @endrole
-@role('user')
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('menu') }}">Menu</a>
-</li>
-<li class="nav-item">   
-    <a class="nav-link" href="#">Cart</a> 
-</li>
-@endrole
 @endsection
 
 @section('content')
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="https://dummyimage.com/1200x450/8c8/000000&text=1200x400" alt="First slide">
+            <img class="d-block w-100" width="1200" height="500" src="storage/welcomeimg.png" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h3><a href="{{ route('menu') }}">Order Now</a></h3>
                 <p>This is a description for the first slide.</p>
@@ -50,19 +42,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="my-5 row bg-white w-100 ">
-    <div class="col-lg-6 border py-3" >
-      <h2>About Soul Food</h2>
+<div class="my-5 row bg-white w-100 pl-3">
+    <div class="col-lg-6 border py-3 text-center" >
+      <h2 class="mt-5">About Soul Food</h2>
       <p>Soul Food Specilizes in:</p>
-      <ul>
-        <li>
-          <strong>Bootstrap v4</strong>
-        </li>
-        <li>jQuery</li>
-        <li>Font Awesome</li>
-        <li>Working contact form with validation</li>
-        <li>Unstyled page elements for easy customization</li>
-      </ul>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
     </div>
     <div class="col-lg-6 border">
@@ -78,7 +61,7 @@
         <div class="col-lg-4 border">
             <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
             <h2 class="text-center">{{$category->name}}</h2>
-            <a href="{{ route('category',['category'=>$category->name]) }}" class="img-caption">Order Now</a>
+            <a href="{{ route('category',['category'=>$category]) }}" class="img-caption">Order Now</a>
         </div>
         @endforeach
 
@@ -133,7 +116,7 @@
         </h1>
             
     </div>
-    <div class="col-lg-8 bg-white p-3 shadow-sm">
+    <div class="col-lg-8 bg-white p-3 shadow-sm border pt-4">
     <form action="" method="post" role="form">
         <div class="form-row">
           <div class="col-lg-4 col-md-6 form-group">

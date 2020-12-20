@@ -30,3 +30,7 @@ Route::get('/cart', 'CartController@index')->name('cart_index');
 
 Route::get('/cart/update/{item}/{quantity}', 'CartController@update')->name('cart_update');
 
+Route::get('/admin/menu','MenuController@index')->name('admenu');
+Route::get('/admin/menu/edit/{id}','MenuController@edit')->name('edit');
+Route::get('/admin/menu/add','MenuController@add')->name('add');
+

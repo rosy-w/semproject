@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Item;
 
 class ItemSeeder extends Seeder
 {
@@ -14,28 +15,28 @@ class ItemSeeder extends Seeder
         $items=[
             [
                 'category_id'=>'1',
-                'description'=>'Pasta in delicious fresh-made tomato sauce.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. Duis turpis elit, suscipit vel elit ultrices, luctus varius elit. Praesent luctus metus sed sem posuere, in viverra diam scelerisque',
+                'description'=>'Pasta in delicious fresh-made tomato sauce.',
                 'name'=>'Tomato Pasta ',
                 'price'=>'200',
                 'image_url'=>'tomatopasta.png',
             ],
             [
                 'category_id'=>'3',
-                'description'=>'Rosemary Spritzer lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. Duis turpis elit, suscipit vel elit ultrices, luctus varius elit. Praesent luctus metus sed sem posuere, in viverra diam scelerisque',
-                'name'=>'Rosmary Spritzer',
+                'description'=>'Rosemary Spritzer lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'name'=>'Rosemary Spritzer',
                 'price'=>'100',
                 'image_url'=>'rosemaryspritzer.png',
             ],
             [
                 'category_id'=>'2',
-                'description'=>'Barbeque Chicken Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. Duis turpis elit, suscipit vel elit ultrices, luctus varius elit. Praesent luctus metus sed sem posuere, in viverra diam scelerisque',
+                'description'=>'Barbeque Chicken Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. ',
                 'name'=>'Barbeque Chicken',
                 'price'=>'300',
                 'image_url'=>'barbequechicken.png',
             ],
             [
                 'category_id'=>'3',
-                'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. Duis turpis elit, suscipit vel elit ultrices, luctus varius elit. Praesent luctus metus sed sem posuere, in viverra diam scelerisque',
+                'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
                 'name'=>'Black Coffee',
                 'price'=>'100',
                 'image_url'=>'blackcoffee.png',
@@ -56,5 +57,15 @@ class ItemSeeder extends Seeder
             ],
             
         ];
+        foreach($items as $item)
+          {
+              Item::create([
+               'category_id' => $item['category_id'],
+               'description'=> $item['description'],
+               'name'=>$item['name'],
+               'price'=>$item['price'],
+               'image_url'=>$item['image_url'],
+             ]);
+           }
     }
 }

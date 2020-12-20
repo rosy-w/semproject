@@ -25,9 +25,10 @@ class CreateItemsTable extends Migration
             $table->increments('item_id');
             $table->integer('category_id');
             $table->string('name', 45);
-            $table->string('description', 100)->nullable();
+            $table->string('description', 256)->nullable();
             $table->integer('price');
             $table->string('image_url')->nullable();
+            $table->timestamps();
         });
     }
 

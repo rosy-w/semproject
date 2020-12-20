@@ -78,7 +78,7 @@
         <div class="col-lg-4 border">
             <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
             <h2 class="text-center">{{$category->name}}</h2>
-            <a href="{{ route('category',['category'=>$category->id]) }}" class="img-caption">Order Now</a>
+            <a href="{{ route('category',['category'=>$category]) }}" class="img-caption">Order Now</a>
         </div>
         @endforeach
 

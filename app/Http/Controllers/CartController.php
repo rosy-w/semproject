@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use App\User;
+use App\Item;
 
 class CartController extends Controller
 {
@@ -15,7 +16,7 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        $id = $request->user()->id;
+        $id = $request->user()->user_id;
         $cartitems=Cart::where('user_id','=',$id);
         return view('cart',compact('cartitems'));
     }
@@ -27,31 +28,29 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return view('menu');
     }
-
     /**
-     * Store a newly created resource in storage.
+     * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
-    {  
-        $item = Item::find($id);       
-        if(!$item) {
-            abort(404);
-        }
-        $cart = session()->get('cart');
- 
-        // if cart is empty then this the first product
-        if(!$cart) {
- 
-            $cart = [
-                        "user_id" => $request->user()->user_id,
-                        "total_amount" => $item->price,                  
-            ];
+    public function addtocart(Request $request, $id)
+    {
+        $item=Item::where('item_id',$id);
+        if(!$item)
+        {
+            abort(404);
+        }
+        $cart = session()->get('cart');
+        if(!$cart)
+        {
+            $cart= new Cart();
+            $cart->user_id=$request->user()->user_id;
+            $cart->total_amount=$item->price;
             $cart->items()->attach($item);
+            $cart
  
             session()->put('cart', $cart);
  
@@ -97,19 +96,10 @@ class CartController extends Controller
            
  
         }
- 
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    }
+    public function show()
     {
-        //
+
     }
 
     /**

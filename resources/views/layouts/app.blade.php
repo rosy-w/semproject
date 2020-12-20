@@ -58,7 +58,9 @@
                         @else
                             @yield('extra-nav')
                             {{$id = Auth::user()->user_id}}
+                            @role('user')
                             <li class="nav-item"><a class="nav-link" href="{{route('cart_index',['id'=>$id])}}">Cart</a></li>
+                            @endrole
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -81,7 +83,7 @@
                 </div>
             </div>
         </nav>    
-        <main class="py-1">
+        <main>
             @yield('content')
         </main>
     </div>

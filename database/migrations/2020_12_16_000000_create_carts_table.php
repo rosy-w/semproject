@@ -26,8 +26,6 @@ class CreateCartsTable extends Migration
             $table->integer('user_id');
             $table->integer('total_amount');
             $table->timestamps();
-
-            $table->primary(['cart_id', 'food_id']);
         
         });
         Schema::create('cart_item', function (Blueprint $table) {
@@ -36,7 +34,6 @@ class CreateCartsTable extends Migration
             $table->integer('item_id');
             $table->integer('quantity')->nullable();
             $table->integer('total_price')->nullable();
-            $table->timestamps();
             $table->primary(['cart_id','item_id']);
         });
     }

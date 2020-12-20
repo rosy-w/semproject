@@ -15,7 +15,7 @@
     <div>
         <ul class="nav flex-row border list-group list-group-flush w-100 d-flex justify-content-center text-center pt-4">
             @foreach ($categories as $category)
-            <li class="list-group-item px-5"><h3><a href="{{ route('category',['category'=> $category->name])}}">{{$category->name}}</a></h3></li>       
+            <li class="list-group-item px-5"><h3><a href="{{ route('category',['category'=> $category])}}">{{$category->name}}</a></h3></li>       
             @endforeach
         </ul>
     </div>
