@@ -22,7 +22,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('item_id');
+            $table->increments('id');
             $table->integer('category_id');
             $table->string('name', 45);
             $table->string('description', 256)->nullable();

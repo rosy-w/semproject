@@ -7,9 +7,6 @@
 </li>
 @endrole
 @role('user')
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('menu') }}">Menu</a>
-</li>
 <li class="nav-item">   
     <a class="nav-link" href="#">Cart</a> 
 </li>

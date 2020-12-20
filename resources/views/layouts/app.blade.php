@@ -58,7 +58,11 @@
                         @else
                             @yield('extra-nav')
                             {{$id = Auth::user()->user_id}}
+                            {{session(['userid' => Auth::user()->user_id])}}
                             @role('user')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('menu') }}">Menu</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="{{route('cart_index',['id'=>$id])}}">Cart</a></li>
                             @endrole
                             <li class="nav-item dropdown">

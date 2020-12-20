@@ -22,7 +22,7 @@ class CreateCartsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('cart_id');
+            $table->increments('id');
             $table->integer('user_id');
             $table->integer('total_amount');
             $table->timestamps();
@@ -34,6 +34,7 @@ class CreateCartsTable extends Migration
             $table->integer('item_id');
             $table->integer('quantity')->nullable();
             $table->integer('total_price')->nullable();
+            $table->timestamps();
             $table->primary(['cart_id','item_id']);
         });
     }
