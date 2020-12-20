@@ -28,7 +28,7 @@
                 <h3 class="p-2">{{$item->name}}</h3>
                 <p>{{$item->description}}</p>
                 <p>Ksh. {{$item->price}}</p>
-                <a href="{{ route('cart_add',['id'=>$item->id]) }}" class="button">Add to Cart</a>
+                <a href="{{ route('cart.store',['id'=>$item->id]) }}" class="button">Add to Cart</a>
             </div>
         @endforeach 
     </div>

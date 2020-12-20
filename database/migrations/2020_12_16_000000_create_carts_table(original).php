@@ -28,11 +28,12 @@ class CreateCartsTable extends Migration
             $table->timestamps();
         
         });
-        Schema::create('cart_item', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->integer('cart_id');
             $table->integer('item_id');
             $table->integer('quantity')->nullable();
+            $table->integer('price');
             $table->integer('total_price')->nullable();
             $table->timestamps();
             $table->primary(['cart_id','item_id']);
