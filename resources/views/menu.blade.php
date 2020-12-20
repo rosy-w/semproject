@@ -28,7 +28,16 @@
                 <h3 class="p-2">{{$item->name}}</h3>
                 <p>{{$item->description}}</p>
                 <p>Ksh. {{$item->price}}</p>
-                <a href="{{ route('cart.store',['id'=>$item->id]) }}" class="button">Add to Cart</a>
+                {{-- <a href="{{ route('cart.store',['id'=>$item->id]) }}" class="button">Add to Cart</a> --}}
+                
+                <form action="{{ route('cart.store') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{$item->id}}">
+                    <input type="hidden" name="name" value="{{$item->name}}">
+                    <input type="hidden" name="price" value="{{$item->price}}">
+
+                    <button type="submit" class="button button-plain">Add to Cart</button>
+                </form>
             </div>
         @endforeach 
     </div>

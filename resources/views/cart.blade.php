@@ -23,19 +23,6 @@
         <!-- Card -->
         <div class="card wish-list mb-3">
           <div class="card-body"> 
-            @if($cartitems)
-            <h5 class="mb-4">Cart (<span>0</span> items)</h5>
-            <div class="row mb-4">
-              <div class="col-md-5 col-lg-3 col-xl-3">
-                <div class="z-depth-1 rounded mb-3 mb-md-0">
-                  <img class="img-fluid w-100"
-                    src="http://placehold.it/150x150" alt="Sample">
-                </div>
-              </div>
-            </div>
-            
-            @else
-            @foreach($fooditems as $item)
             <h5 class="mb-4">Cart (<span>2</span> items)</h5>
             <div class="row mb-4">
               <div class="col-md-5 col-lg-3 col-xl-3">
@@ -49,14 +36,14 @@
                 <div>
                   <div class="d-flex justify-content-between">
                     <div>
-                      <h5>{{$item->food_name}}</h5>
-                      <p class="mb-3 text-muted text-uppercase small">{{$item->description}}</p>
-                      <p class="mb-3 text-muted text-uppercase small">{{$item->price}}</p>
+                      <h5>Food Name</h5>
+                      <p class="mb-3 text-muted text-uppercase small">Description</p>
+                      <p class="mb-3 text-muted text-uppercase small">Price</p>
                     </div>
                     <div>
                       <div class="def-number-input number-input mb-0 w-100">
-                        <input class="quantity" min="0" name="quantity" value="{{$cart->items()->where('item_id',$item->id)->pivot->quantity}}" type="number">
-                        <div><a href="{{ route('cart_update',['item'=>$item->food_id,'quantity'=>'quantity']) }}">Update</a></div>
+                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                        <div><a href="#">Update</a></div>
                       </div>
                     </div>
                   </div>
@@ -67,13 +54,11 @@
                       <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
                           class="fa fa-heart mr-1"></i> Move to wish list </a>
                     </div>
-                    <p class="mb-0"><span><strong>{{$cart->items()->where('item_id',$item->id)->pivot->total_price}}</strong></span></p>
+                    <p class="mb-0"><span><strong>Price here</strong></span></p>
                   </div>
                 </div>
               </div>
             </div>
-            @endforeach
-            @endif
           </div>
         </div>
         <!-- Card -->

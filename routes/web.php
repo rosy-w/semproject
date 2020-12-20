@@ -26,7 +26,7 @@ Route::get('/menu', 'HomeController@menu')->name('menu');
 
 Route::get('/menu/category/{category}', 'HomeController@category')->name('category');
 
-Route::get('/cart', 'CartController@index')->name('cart_index');
+Route::get('/cart', 'CartController@index')->name('cart.index');
 
 /* Route::get('/cart/add/{id}', 'CartController@addtocart')->name('cart_add');
 Route::get('/cart/update/{item}/{quantity}', 'CartController@update')->name('cart_update'); */
