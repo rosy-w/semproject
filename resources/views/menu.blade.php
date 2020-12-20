@@ -1,21 +1,11 @@
 @extends('layouts.app')
 
-@section('extra-nav') 
-<li class="nav-item">
-    @role('admin')
-    <a class="nav-link" href="/admin">Admin</a>
-    @endrole
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('menu') }}">Menu</a>
-</li>
-@endsection
 @section('content')
-<div class="bg-white border shadow-sm w-75 m-auto p-3">
+<div class="bg-white border shadow-sm w-75 m-auto p-3 ">
     <div>
-        <ul class="nav flex-row border list-group list-group-flush w-100 d-flex justify-content-center text-center pt-4">
+        <ul class="nav flex-row border-bottom list-group list-group-flush w-100 d-flex justify-content-center text-center pt-4">
             @foreach ($categories as $category)
-            <li class="list-group-item px-5"><h3><a href="{{ route('category',['category'=> $category])}}">{{$category->name}}</a></h3></li>       
+            <li class="list-group-item px-5"><h3><a style="color: #453836" href="{{ route('category',['category'=> $category])}}">{{$category->name}}</a></h3></li>       
             @endforeach
         </ul>
     </div>

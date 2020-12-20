@@ -33,6 +33,7 @@ Route::get('/cart/update/{item}/{quantity}', 'CartController@update')->name('car
 
 Route::get('/admin/menu','MenuController@index')->name('admenu');
 Route::get('/admin/menu/edit/{id}','MenuController@edit')->name('edit');
+Route::get('/admin/menu/delete/{id}','MenuController@delete')->name('delete');
 Route::get('/admin/menu/add','MenuController@add')->name('add');
 
 Route::post('/cart', 'CartController@store')->name('cart.store');

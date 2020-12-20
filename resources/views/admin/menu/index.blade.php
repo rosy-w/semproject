@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="flex flex-col">
-    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div class="-my-2 py-2 overflow-x-hidden sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
       <div class="mt-4 align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 p-4">
         <span class="text-gray-700">Categories of Food Items</span>
         <div>
@@ -28,30 +28,27 @@
                 <th class="th">Name</th>
                 <th class="th">Description</th>
                 <th class="th">Price</th>
-                <th class="th">Quantity</th>
+                <th class="th">Action</th>
               </tr>
             </thead>
             <tbody class="bg-white">
               @foreach ($items as $item)
               <tr>
-                <td class="td text-sm leading-5 text-gray-900">
-                  {{$item->item_id}}
+                <td class="td text-sm leading-5 text-gray-900 ">
+                  {{$item->id}}
                 </td>
-                <td class="td text-sm leading-5 text-gray-900">
+                <td class="td text-sm leading-5 text-gray-900 ">
                   {{$item->name ?? 'The model doesn\'t have a `name` attribute'}}
                 </td>
-                <td class="td text-sm leading-5 text-gray-900">
+                <td class="td text-sm leading-5 text-gray-900 " >
                   {{$item->description}}
                 </td>
-                <td class="td text-sm leading-5 text-gray-900">
+                <td class="td text-sm leading-5 text-gray-900 ">
                   {{$item->price}}
                 </td>
-                <td class="td text-sm leading-5 text-gray-900">
-                    {{$item->quantity}}
-                </td>
-                <td class="flex justify-end px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                    <a href="{{ route('edit', ['id' => $item->item_id]) }}"
-                    class="text-blue-600 hover:text-blue-900">Edit
+                <td class=" flex justify-end px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                    <a href="{{ route('edit', ['id' => $item->id]) }}"class="text-blue-600 hover:text-blue-900">Edit</a>
+                    <a href="{{ route('delete', ['id' => $item->id]) }}"class="px-2 text-red-600 hover:text-red-900">Delete</a>
                 </td>
               </tr>
               @endforeach

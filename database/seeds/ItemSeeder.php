@@ -29,7 +29,7 @@ class ItemSeeder extends Seeder
             ],
             [
                 'category_id'=>'2',
-                'description'=>'Barbeque Chicken Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sollicitudin augue, et ultrices risus maximus a. ',
+                'description'=>'Barbeque Chicken Lorem ipsum dolor sit amet. ',
                 'name'=>'Barbeque Chicken',
                 'price'=>'300',
                 'image_url'=>'barbequechicken.png',

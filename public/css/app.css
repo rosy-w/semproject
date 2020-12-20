@@ -73,6 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4413,6 +4414,7 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color: white;
 }
 
 .nav-link:hover,
@@ -4421,7 +4423,7 @@ input[type=button].btn-block {
 }
 
 .nav-link.disabled {
-  color: #6c757d;
+  color: white;
   pointer-events: none;
   cursor: default;
 }

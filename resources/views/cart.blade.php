@@ -1,15 +1,4 @@
 @extends('layouts.app')
-
-@section('extra-nav') 
-<li class="nav-item">
-    @role('admin')
-    <a class="nav-link" href="/admin">Admin</a>
-    @endrole
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('menu') }}">Menu</a>
-</li>
-@endsection
 @section('content')
 <!--Section: Block Content-->
 <section>

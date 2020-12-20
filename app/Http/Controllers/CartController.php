@@ -31,6 +31,9 @@ class CartController extends Controller
         $itemprice=$request->price;
         Cart::add($itemid,$itemname, 1, $itemprice)
         ->associate('App\Item');
+        $user=Auth::user();
+        $userid = $user->id;
+        Cart::store($userid);
 
         return redirect()->route('cart.index')->with('success_message','Item was added to your cart');
     }

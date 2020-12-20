@@ -34,7 +34,7 @@ class MenuController
         if (!$userModel) {
             abort(404);
         }
-        $items=Item::orderBy('item_id')->paginate(10);
+        $items=Item::orderBy('id')->paginate(10);
         $categories=Category::all();
         return view('admin.menu.index',compact('categories','items','modelKey'));
     }
