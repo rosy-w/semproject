@@ -23,7 +23,7 @@
         @foreach ($items as $item)
             <div class="col-md-6">
                 <div class="float-left p-2">
-                    <img src="http://placehold.it/150x150" alt="">
+                    <img src={{ asset('storage/'.$item->image_url) }} alt="">
                 </div>
                 <h3 class="p-2">{{$item->name}}</h3>
                 <p>{{$item->description}}</p>
