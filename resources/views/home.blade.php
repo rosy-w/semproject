@@ -6,11 +6,6 @@
     <a class="nav-link" href="/admin">Admin</a>   
 </li>
 @endrole
-@role('user')
-<li class="nav-item">   
-    <a class="nav-link" href="#">Cart</a> 
-</li>
-@endrole
 @endsection
 
 @section('content')
