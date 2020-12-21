@@ -35,6 +35,8 @@ Route::get('/admin/menu','MenuController@index')->name('admenu');
 Route::get('/admin/menu/edit/{id}','MenuController@edit')->name('edit');
 Route::get('/admin/menu/delete/{id}','MenuController@delete')->name('delete');
 Route::get('/admin/menu/add','MenuController@add')->name('add');
+Route::get('/admin/menu/add/item','MenuController@additem')->name('additem');
+
 
 Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::post('/menu/reservation','HomeController@reservation')->name('user.reservation');

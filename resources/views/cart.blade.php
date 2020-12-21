@@ -6,48 +6,49 @@
     <!--Grid row-->
     <div class="row">
   
-      <!--Grid column-->
-      <div class="col-lg-8">
-  
+      @if(Cart::count()>0)
         <!-- Card -->
         <div class="card wish-list mb-3">
           <div class="card-body"> 
-            <h5 class="mb-4">Cart (<span>2</span> items)</h5>
+            <h5 class="mb-4">Cart (<span>{{ Cart::count() }}</span> items)</h5>
+            @foreach (Cart::content() as $item)
             <div class="row mb-4">
               <div class="col-md-5 col-lg-3 col-xl-3">
                 <div class="z-depth-1 rounded mb-3 mb-md-0">
-                  <img class="img-fluid w-100"
-                    src="http://placehold.it/150x150" alt="Sample">
-
+                  <a href="{{route('menu')}}"><img class="img-fluid w-100"
+                    src="{{asset('storage/'.$item->model->slug)}}" alt="Sample">
+                  </a>
                 </div>
               </div>
               <div class="col-md-7 col-lg-9 col-xl-9">
                 <div>
                   <div class="d-flex justify-content-between">
                     <div>
-                      <h5>Food Name</h5>
-                      <p class="mb-3 text-muted text-uppercase small">Description</p>
-                      <p class="mb-3 text-muted text-uppercase small">Price</p>
+                      <h5>{{$item->model->name}}</h5>
+                      <p class="mb-3 text-muted text-uppercase small">{{$item->model->details}}</p>
+                      <p class="mb-3 text-muted text-uppercase small">{{$item->model->description}}</p>
                     </div>
                     <div>
                       <div class="def-number-input number-input mb-0 w-100">
-                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                        <input class="quantity" min="0" name="quantity" value="{{$item->model->quantity}}" type="number">
                         <div><a href="#">Update</a></div>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
                     <div>
-                      <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
+                      <a href="" type="button" class="card-link-secondary small text-uppercase mr-3"><i
                           class="fa fa-trash mr-1"></i> Remove item </a>
                       <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
                           class="fa fa-heart mr-1"></i> Move to wish list </a>
                     </div>
-                    <p class="mb-0"><span><strong>Price here</strong></span></p>
+                    <p class="mb-0"><span><strong>{{$item->model->price}}</strong></span></p>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
+            @endforeach
+            
           </div>
         </div>
         <!-- Card -->
@@ -62,7 +63,7 @@
           </div>
         </div>
         <!-- Card -->
-  
+        
         <!-- Card -->
         <div class="card mb-3">
           <div class="card-body">
@@ -144,7 +145,9 @@
           </div>
         </div>
         <!-- Card -->
-  
+        @else
+            <h3>No Items in Cart</h3>
+        @endif
       </div>
       <!--Grid column-->
   

@@ -6,7 +6,7 @@
 <div class="flex flex-col border">
     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-32">
         @csrf
-        <form action="" method="post">
+        <form action="{{route('additem')}}" method="post">
             <label class="block my-4">
                 <span class="text-gray-700">Food Name</span>
                 <input
@@ -19,9 +19,9 @@
             <label class="block my-4">
                 <span class="text-gray-700"> Category</span>
                 <select class="form-select block w-full mt-1" x-model="model">
-                  <option value="initial" disabled selected >Select a Category</option>
+                  <option name="category" value="initial" disabled selected >Select a Category</option>
                   @foreach ($categories as $category)
-                    <option value="{{$category}}">{{$category->name}}</option>
+                    <option value="{{$category->id}}">{{$category->name}}</option>
                   @endforeach
                 </select>
               </label>
@@ -29,7 +29,7 @@
                 <span class="text-gray-700">Description</span>
                 <input
                   class="form-input mt-1 block w-full"
-                  name="description"
+                  name="detail"
                   autocomplete="off"
                   placeholder="Enter a description"
                 >
@@ -61,6 +61,7 @@
                 href="{{route('admenu')}}" class="btn btn-red mr-4">Cancel
           </a>
           <button class="btn btn-blue" type="submit">Save</button>
+   
         </div>
       </form>
     </div>

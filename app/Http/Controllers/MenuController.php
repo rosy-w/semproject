@@ -54,7 +54,7 @@ class MenuController
         return view('admin.menu.add',compact('item','itemcategory','categories'));
 
     }
-    public function store(StoreItemRequest $request)
+    public function additem(StoreItemRequest $request)
     {
         $data = $request->validated();
         $categories=Category::all();

@@ -14,12 +14,14 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        return view('cart');
+        $cart=Cart::content();
+        return view('cart',compact('cart'));
     }
     public function create()
     {
         
     }
+    
     public function show()
     {
 
@@ -35,7 +37,7 @@ class CartController extends Controller
         $userid = $user->id;
         Cart::store($userid);
 
-        return redirect()->route('cart.index')->with('success_message','Item was added to your cart');
+        return redirect()->route('menu')->with('success','Item was added to your cart');
     }
     public function edit($id)
     {
