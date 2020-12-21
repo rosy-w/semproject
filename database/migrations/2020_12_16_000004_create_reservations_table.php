@@ -23,11 +23,15 @@ class CreateReservationsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('reservation_id');
-            $table->string('name', 45)->nullable();
-            $table->string('phone', 45)->nullable();
-            $table->string('message', 45)->nullable();
-            $table->dateTime('date_time')->nullable();
+            $table->string('name', 45);
+            $table->string('phone', 45);
+            $table->integer('people')->nullable();
+            $table->string('message', 255)->nullable();
+            $table->string('email', 45)->nullable();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
             $table->integer('user_id');
+            $table->timestamps();
         });
     }
 

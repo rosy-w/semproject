@@ -10,4 +10,9 @@ class Item extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function carts()
+    {
+
+        return $this->belongsToMany(Cart::class)->withPivot('quantity', 'total_price')->withTimestamps();
+    }
 }
