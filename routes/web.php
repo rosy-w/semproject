@@ -37,3 +37,4 @@ Route::get('/admin/menu/delete/{id}','MenuController@delete')->name('delete');
 Route::get('/admin/menu/add','MenuController@add')->name('add');
 
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::post('/menu/reservation','HomeController@reservation')->name('user.reservation');
